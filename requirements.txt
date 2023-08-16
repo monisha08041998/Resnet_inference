@@ -3,3 +3,4 @@ flasgger
 tensorflow
 numpy
 python-dotenv
+gunicorn
