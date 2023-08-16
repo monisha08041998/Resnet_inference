@@ -1,0 +1,44 @@
+swagger: "2.0"
+info:
+  title: "Image Classification API"
+  description: "API for image classification using a trained model."
+  version: "1.0"
+  contact:
+    email: "monisha.manand@gmail.com"
+basePath: "/"
+schemes:
+  - "http"
+consumes:
+  - "multipart/form-data"
+produces:
+  - "application/json"
+paths:
+  /:
+    post:
+      summary: "Classify an image"
+      description: "Upload an image for classification."
+      consumes:
+        - "multipart/form-data"
+      parameters:
+        - name: image
+          in: formData
+          required: true
+          type: file
+      responses:
+        200:
+          description: "Successful response"
+          schema:
+            type: object
+            properties:
+              prediction:
+                type: object
+                properties:
+                  label:
+                    type: string
+                  score:
+                    type: number
+        400:
+          description: "Bad request"
+        500:
+          description: "Internal server error"
+

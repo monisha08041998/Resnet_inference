@@ -1,0 +1,5 @@
+flask
+flasgger
+tensorflow
+numpy
+python-dotenv
